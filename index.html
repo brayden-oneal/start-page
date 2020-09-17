@@ -12,11 +12,17 @@
             <div class="grid">
                 <div class="search-bar">
                     <div class="search-field">
-                        <input type="text" id="search-field" placeholder="Enter search term..." spellcheck="false">
+                        <input  type="text" 
+                                id="search-field" 
+                                placeholder="Enter search term..." 
+                                spellcheck="false"
+                                onchange="checkEmpty()"
+                                onfocusin="setClearVisible()"
+                                onfocusout="setClearInvisible('search-clear')">
                     </div>
 
                     <div class="search-clear">
-                        <ion-icon size="large" name="close"></ion-icon>
+                        <ion-icon size="large" name="close" id="search-clear"></ion-icon>
                     </div>
 
                     <div class="search-button">
