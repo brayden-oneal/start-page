@@ -60,7 +60,8 @@ input[type=text] {
 .search-field {
     border-right: none;
     display: grid;
-    border-radius: 8px 0 0 8px;
+    border-radius: 0px 0 0 0px;
+    padding: 2px;
 }
 
 .search-field input[type=text] {
