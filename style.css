@@ -1,0 +1,138 @@
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
+
+:root {
+    --wrapper-width: 1000px;
+    --column-width: 275px;
+    --search-bar-height: 75px;
+    --grid-pad: calc(calc(var(--wrapper-width) - calc(var(--column-width) * 3)) / 2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #222;
+    color: #fd8;
+    font-family: 'Fire Code', monospace;
+    font-size: 20px;
+    user-select: none;
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--wrapper-width);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: var(--column-width) 1fr var(--column-width) 1fr var(--column-width);
+    grid-template-rows: calc(var(--search-bar-height) + var(--grid-pad)) 1fr;
+}
+
+.search-bar {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    display: grid;
+    grid-template-columns: 1fr var(--search-bar-height) var(--search-bar-height);
+    height: var(--search-bar-height);
+    box-shadow: 0 0 24px 4px #111;
+    border-radius: 8px;
+    transition: box-shadow .2s;
+}
+
+.search-field, .search-button, .search-clear, .column {
+    background-color: #222;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #fd8;
+}
+
+input[type=text] {
+    font-family: 'Fire Code', monospace;
+    font-size: 20px;
+}
+
+.search-field {
+    border-right: none;
+    display: grid;
+    border-radius: 8px 0 0 8px;
+}
+
+.search-field input[type=text] {
+    padding: 0 20px 0 20px;
+    background-color: #222;
+    color: #aaa;
+    border: none;
+    border-radius: 8px 0 0 8px;
+}
+
+.search-field input[type=text]::selection {
+    color: #fd8;
+    background-color: #aaa;
+}
+
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+}
+
+.search-bar:focus-within {
+    box-shadow: 0 0 24px 4px #ffdd8855;
+}
+.search-clear {
+    border-left: none;
+    border-right: none;
+    color: #aaa;
+}
+
+.search-clear ion-icon {
+    transition: color .5s;
+}
+
+.search-clear ion-icon:hover {
+    color: #fd8;
+    cursor: pointer;
+}
+
+.search-button {
+    transition: color 0.2s, background-color 0.2s;
+    border-radius: 0 8px 8px 0;
+}
+
+.search-button:hover {
+    background-color: #fd8;
+    color: #222;
+    cursor: pointer;
+}
+
+ion-icon {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.column {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 24px 4px #111;
+}
+
+.column a {
+    transition: color .2s;
+}
+
+.column a:link, .column a:visited, .column a:active {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.column a:hover {
+    color: #fd8;
+    text-decoration: none;
+}
